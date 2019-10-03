@@ -1,0 +1,23 @@
+{
+    "name":"rauljose/ia_info",
+    "description":"php and project info, simplified web wrapper for bartlett/php-compatinfo and psecio/iniscan",
+    "homepage":"https://github.com/rauljose/ia_info",
+    "license":"MIT",
+    "type": "project",
+    "require":{
+        "bartlett/php-compatinfo":"2.6.*",
+        "psecio/iniscan":"3.6.*",
+        "dg/composer-cleaner":"2.1.*"
+    },
+    "config": {
+        "htaccess-protect":true,
+        "optimize-autoloader":true,
+        "classmap-authoritative": true
+    },
+    "extra": {
+		"cleaner-ignore": {
+			"bartlett/php-compatinfo-db": ["data", "*json"],
+            "psecio/iniscan": ["data", "*json"]
+        }
+   }
+}

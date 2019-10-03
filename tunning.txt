@@ -1,0 +1,51 @@
+accord
+https://iademos.com/Catalogo/
+opcache.revalidate_freq = 10
+realpath_cache_size = 64k
+realpath_cache_ttl = 120
+
+n php-fpm config (usually /etc/php5/fpm/php-fpm.conf)
+*** https://serverfault.com/questions/189940/how-do-you-restart-php-fpm
+https://myjeeva.com/php-fpm-configuration-101.html
+
+https://haydenjames.io/php-fpm-tuning-using-pm-static-max-performance/
+pm = dynamic – the number of child processes is set dynamically based on the following directives: pm.max_children, pm.start_servers,pm.min_spare_servers, pm.max_spare_servers.
+
+pm = ondemand – the processes spawn on demand (when requested, as opposed to dynamic, where pm.start_servers are started when the service is started.
+
+pm = static – the number of child processes is fixed by pm.max_children.
+pm = ondemand
+pm.max_children = 50
+pm.process_idle_timeout = 10s
+pm.max_requests = 500
+
+Set MySQL Query Cache Size no larger than 100 to 200MB!
+query_cache_type = 2
+query_cache_limit = 256K
+query_cache_min_res_unit = 2k
+query_cache_size = 80M
+
+-- mariadb --
+thread_pool_min_threads
+
+hread_pool_min_threads 
+
+thread_pool_size                        | 12                        |
+| thread_pool_stall_limit                 | 500                       |
+| thread_stack                            | 294912   
+
+query_cache_size             | 0
+--
+Include '/etc/httpd/conf/plesk.conf.d/server.conf'
+IncludeOptional '/etc/httpd/conf/plesk.conf.d/webmails/*.conf'
+IncludeOptional '/etc/httpd/conf/plesk.conf.d/vhosts/*.conf'
+IncludeOptional '/etc/httpd/conf/plesk.conf.d/forwarding/*.conf'
+IncludeOptional '/etc/httpd/conf/plesk.conf.d/wildcards/*.conf'
+
+Alias "/plesk-stat" "/var/www/vhosts/system/iademos.com/statistics"
+                Alias /webstat /var/www/vhosts/system/iademos.com/statistics/webstat
+                Alias /webstat-ssl /var/www/vhosts/system/iademos.com/statistics/webstat-ssl
+/var/www/vhosts/system/iademos.com/statistics
+
+        access_log "/var/www/vhosts/system/iademos.com/logs/proxy_access_ssl_log";
+        error_log "/var/www/vhosts/system/iademos.com/logs/proxy_error_log";
