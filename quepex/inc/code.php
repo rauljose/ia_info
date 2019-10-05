@@ -12,7 +12,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 ini_set('display_errors',1);
 ini_set('memory_limit', 1*1024*1024*1024);
 set_time_limit(60*3);
-require_once(__DIR__ .'/../vendor/autoload.php');
+require_once(__DIR__ .'/../../vendor/autoload.php');
 require_once(__DIR__ .'/ScanWebIni.php');
 
 function batAnalysis($dataSource, $checkPhpVersion=null, $showUnused=false, $showDetails=false, $iniAllRules=false) {
