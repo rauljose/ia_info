@@ -5,7 +5,7 @@
     "license":"MIT",
     "type": "project",
     "require":{
-        "bartlett/php-compatinfo":"2.6.*",
+        "bartlett/php-compatinfo":"5.2.*",
         "psecio/iniscan":"3.6.*",
         "dg/composer-cleaner":"2.1.*"
     },
